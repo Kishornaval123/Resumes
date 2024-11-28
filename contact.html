@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav li {
+            height: 50px;
+        }
+
+        nav a {
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+
+        nav a:hover {
+            background-color: #0f0f0f;
+            color: white;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .sidebar li {
+            width: 100%;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .hideOnMobile {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            nav a {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .sidebar {
+                width: 100%;
+            }
+
+            nav a {
+                padding: 0 15px;
+                font-size: 14px;
+            }
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            background-image: url('https://awaitingadventures.in/contact/cover.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 60px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .social-link img {
+            width: 250px;
+            height: 200px;
+            transition: transform 0.3s;
+            border-radius: 8px;
+        }
+
+        .social-link:hover img {
+            transform: scale(1.1);
+        }
+
+        .social-link span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #0073e6;
+        }
+
+        @media (max-width: 600px) {
+            .contact-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-link img {
+                width: 250px;
+                height: 150px;
+            }
+
+            .social-link span {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#5f6368">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
+                </a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">PORTFOLIO</a></li>
+            <li class="hideOnMobile"><a href="index.html">Home</a></li>
+            <li class="hideOnMobile"><a href="resume.html">Resume</a></li>
+            <li class="hideOnMobile"><a href="Projects.html">Projects</a></li>
+            <li class="hideOnMobile"><a href="Blogs.html">Blogs</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#5f6368">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero"></section>
+
+    <section class="contact-section">
+        <h2>Connect with Me</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/your-profile-link" target="_blank" class="social-link">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQh9HJlAekcHg6Xt-06Q9Aa4wG108_cFw-fQ&s"
+                    alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/brahamin3/" target="_blank" class="social-link">
+                <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/E802/production/_89649395_instagram_logo_976.jpg"
+                    alt="Instagram">
+                <span>Instagram</span>
+            </a>
+            <a href="https://public.tableau.com/app/profile/naval.kishor4882/vizzes" target="_blank" class="social-link">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGmWF3-yTfdmuaXm7VQAs3zOGMTNdLRjIyuQ&s"
+                    alt="Tableau">
+                <span>Tableau</span>
+            </a>
+            <a href="https://github.com/Kishornaval123" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

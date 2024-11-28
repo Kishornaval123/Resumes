@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Roboto;
+        }
+
+
+        .enquiry-section {
+            position: fixed;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .enquiry-icon {
+            width: 60px;
+            /* Adjust the size of the icons as needed */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin: 0px;
+            /* Add some margin between the icons */
+        }
+
+        /* Responsive styling */
+        @media screen and (max-width: 450px) {
+            .enquiry-section {
+                top: unset;
+                top: 30%;
+                right: 0;
+                bottom: 20px;
+                transform: none;
+            }
+
+            .enquiry-icon {
+                width: 45px;
+                /* Adjust the size of the icons for smaller devices */
+            }
+        }
+
+        .cta-button {
+            position: relative;
+            padding: 15px 50px;
+            background-color: black;
+            /* Bootstrap primary color */
+            color: white;
+            text-decoration: none;
+            border-radius: 10%;
+            transition: background-color 0.3s ease;
+            z-index: 999;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+
+        @media screen and (max-width: 450px) {
+            .cta-button {
+                padding: 7px 15px;
+            }
+
+        }
+
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://firebasestorage.googleapis.com/v0/b/polywell-6c2ae.appspot.com/o/Untitled%20design%20(6).jpg?alt=media&token=2fae8182-1dd7-4653-945f-011415465f13');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.616);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 55%;
+            left: 22%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: left;
+        }
+        .hero-text h1{
+            font-weight: 900;
+            color: Red;
+            font-size: 60px;
+            margin-left: 26%;
+        }
+
+        .hero-text p{
+            font-size: 25px;
+            margin-left: 26%;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            
+            .hero-text {
+                top: 50%;
+                left: 25%;
+                padding-left: 60px;
+                width: 90%;
+                font-size: 20px;
+            }
+            .hero-text h1{
+                margin-left: 20%;
+                font-size: 30px;
+            }
+
+            .hero-text p{
+                font-size: 23px;
+                margin-left: 20%;
+            }
+
+            .hero-section{
+                height: 80vh;
+           }
+            .image-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 12px;
+                padding-top: 20px;
+            }
+
+            .image-section img {
+                max-width: 100%;
+                height: auto;
+                margin: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+        
+
+        @media (max-width: 600px) {
+            .image-section {
+                flex-direction: column;
+            }
+        }
+
+        .clients-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .client-logo {
+            width: 155px;
+            /* Adjust size as needed */
+            height: auto;
+            margin: 30px;
+        }
+
+        /* Media query for small devices */
+        /* Media query for small devices */
+        @media screen and (max-width: 768px) {
+            .client-logo {
+                width: 150px;
+                margin: 10px;
+            }
+        }
+
+
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+
+        .close-btn {
+
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            text-align: center;
+            line-height: 0px;
+            font-size: 8px;
+        }
+
+        .enquiry-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .enquiry-form input,
+        .enquiry-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .enquiry-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .enquiry-form button:hover {
+            background-color: #218838;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .enquiry-form {
+                bottom: 20px;
+                right: 15px;
+            }
+        }
+
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: calc(33.333% - 40px);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .call-us-button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .call-us-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+
+        .catalog-container {
+            display: flex;
+            align-items: center;
+
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .text-container {
+            color: black;
+            margin-left: 20px;
+            font-size: 18px;
+            flex: 1;
+
+        }
+
+        .download-button {
+            flex: 0 0 auto;
+            margin-right: 30px;
+            padding: 15px 60px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: 900;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #3584da;
+        }
+
+        @media screen and (max-width: 768px) {
+            .catalog-container {
+                display: flex;
+                align-items: center;
+                border-radius: 3%;
+                margin: 20px;
+                background-color: #f9f9f9;
+            }
+
+            .text-container {
+                color: black;
+                margin-left: 10px;
+                font-size: 15px;
+                flex: 1;
+
+            }
+
+            .download-button {
+                flex: 0 0 auto;
+                margin-left: 50px;
+
+                padding: 12px 25px;
+                background-color: black;
+                color: white;
+                border: none;
+                font-size: 15px;
+                font-weight: 900;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-content {
+            line-height: 25px;
+            padding-top: 20px;
+            /* Add padding to separate image and content */
+            text-align: justify;
+        }
+
+        .testimonial-card p {
+            margin: 0;
+        }
+
+        .customer-image {
+            width: 100px;
+            margin: 0 auto 10px;
+        }
+
+        .customer-image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .customer-details {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Additional styling for image and name */
+        .customer-info p {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        .testimonials {
+            margin-left: 15px;
+            margin-right: 15px;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .testimonial-card {
+            align-items: center;
+            background-color: white;
+            flex: 0 0 auto;
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 5px;
+
+            scroll-snap-align: start;
+            width: 320px;
+            /* Adjust width as needed */
+        }
+
+        .testimonial-card:last-child {
+            margin-right: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            /* Add desktop-specific styles here */
+            .testimonials {
+                margin-left: 30px;
+                overflow-x: visible;
+                scroll-snap-type: none;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 10px;
+                padding: 0;
+            }
+
+            .testimonial-card {
+                position: relative;
+                width: 360px;
+                background-color: white;
+                border-radius: 5px;
+                padding: 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                transition: transform 0.3s;
+                text-align: center;
+
+                margin-right: 0;
+                scroll-snap-align: none;
+            }
+
+        }
+
+
+
+        .certificate-section {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .certificate-card {
+            flex: 0 0 auto;
+            padding-right: 40px;
+            padding-left: 50px;
+            scroll-snap-align: start;
+        }
+
+
+        .certificate-card img {
+            width: 280px;
+            height: auto;
+        }
+
+        .certificate-card:last-child {
+            margin-right: 0;
+        }
+
+        @media screen and (min-width: 450px) {
+
+            /* Add desktop-specific styles here */
+            .certificate-section {
+                overflow-x: visible;
+                scroll-snap-type: none;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 5px;
+            }
+
+            .certificate-card {
+                margin-right: 0;
+                padding-right: 30px;
+                padding-left: 20px;
+                scroll-snap-align: none;
+            }
+
+            .certificate-card img {
+                width: 220px;
+            }
+        }
+
+        /* General styles */
+        .container {
+            background-color: white;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #contact-form h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        #contact-form input[type="text"],
+        #contact-form input[type="email"],
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #contact-form textarea {
+            resize: vertical;
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        /* Responsive styling */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            #contact-form input[type="text"],
+            #contact-form input[type="email"],
+            #contact-form textarea {
+                width: calc(100% - 20px);
+                margin-right: 10px;
+            }
+        }
+
+        .footer {
+            background-color: #333;
+            margin-top: 20px;
+            color: white;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+
+
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footer-column {
+            padding: 20px;
+            flex: 1;
+            flex-basis: 160px;
+        }
+
+        .footer-logo img {
+            width: 100px;
+            /* Adjust the size of your logo */
+        }
+
+        .footer-nav,
+        .footer-social {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-nav li,
+        .footer-social li {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .footer-social img {
+            width: 10%;
+            /* Adjust the size of your social icons */
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+
+
+
+        <!-- Main content -->
+        <div class="main-content">
+
+
+            <section class="hero-section">
+                <div class="hero-overlay"></div>
+                <div class="hero-text" style="text-align: left;">
+                    <h1 >Safeguard Your Hosptitals Future 
+                        </h1>
+                    <p >Proper medical waste disposal with high-quality bins creates a safer, healthier environment for patients and staff.</p>
+                    <p style="font-size: 18px;" >Trusted by over 5,000+ dealers and hospitals, our legacy of hard work over many years has ensured clean and safe environments in hospitals.</p>
+
+
+
+                    <!-- Add more content as needed -->
+                </div>
+            </section>
+
+
+        </div>
+
+
+
+
+        <div class="enquiry-section">
+            <ul>
+                <li> <a href="https://wa.me/9810057441" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png"
+                            alt="WhatsApp" class="enquiry-icon">
+                    </a></li>
+                <li><a href="mailto:info@polywell.co.in" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Email_icon.png" alt="Email"
+                            class="enquiry-icon">
+                    </a></li>
+            </ul>
+        </div>
+
+
+
+        <div>
+            <h1 style="text-align: center; font-size: 40px;">Our Clients</h1>
+            <div class="clients-container">
+                <!-- Client Logo 1 -->
+                <img class="client-logo"
+                    src="https://naval.motionofknowledge.com/wp-content/uploads/2024/02/Untitled-design-2024-02-06T021846.309.png"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://naval.motionofknowledge.com/wp-content/uploads/2024/02/Maharja-Agrsen.jpg"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://firebasestorage.googleapis.com/v0/b/polywell-6c2ae.appspot.com/o/Untitled%20design%20-%202024-01-03T004933.631.png?alt=media&token=1bff1a32-8924-4b35-b4d0-2d4d8a6d9e98" alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://naval.motionofknowledge.com/wp-content/uploads/2024/02/Untitled-design-2024-02-06T022207.119.png"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://naval.motionofknowledge.com/wp-content/uploads/2024/02/Picture1.jpg" alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/66/Max_Healthcare_logo.svg" alt="Client 1">
+
+
+                <!-- Repeat for the other 5 logos -->
+
+            </div>
+
+
+
+            <div class="clients-container">
+                <!-- Client Logo 1 -->
+                <img class="client-logo"
+                    src="https://naval.motionofknowledge.com/wp-content/uploads/2024/02/Untitled-design-2024-02-06T023013.899.png"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://doctorlistingingestionpr.blob.core.windows.net/doctorprofilepic/1670828411116_ProviderLogo_amrita_hospitals_logo_02.png"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIESCSyigz6dNQmoD13P9gSz1cUzr9tJ5Sjwxo2Gso&s"
+                    alt="Client 1">
+
+                <img class="client-logo"
+                    src="https://images1-fabric.practo.com/batra-hospital-and-medical-research-centre-delhi-1466884820-576ee2d4377d9.png"
+                    alt="Client 1">
+
+
+
+                <!-- Repeat for the other 5 logos -->
+
+            </div>
+
+
+            <!-- Repeat for the other 5 logos -->
+
+        </div>
+
+        </div>
+
+
+        <div class="product-section">
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/07/10L-pedal-dustbin.jpg" alt="Product 1"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/07/120L-BIO-BIN-2.jpg" alt="Product 2"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/06/5-Ltr-1.png" alt="Product 3"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/07/10L-Litter-Bin-4.jpg" alt="Product 4"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/07/Destroyer-Range-3.jpg" alt="Product 5"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://polywell.co.in/wp-content/uploads/2021/06/Garbage-Bag-1.jpg" alt="Product 6"
+                    class="product-image">
+                <button class="call-us-button" onclick="callUs()">Enquiry Now</button>
+            </div>
+        </div>
+
+
+        <div class="catalog-container">
+            <div class="text-container">
+                <p style="font-size: larger;">Download our product cataloge.</p>
+            </div>
+            <button class="download-button"
+                onclick="window.open('https://drive.google.com/file/d/1o7YoRZYSuudPFUjBQP-ZR0vi6BY4vPqj/view?usp=sharing', '_blank')">Download</button>
+        </div>
+
+
+
+
+
+        <!-- Testimonials Section -->
+        <div style="background-color:#333 ;">
+            <h1 style="text-align: center; font-size: 40px;padding-top: 20px; color: white;"> Success Stories</h1>
+
+            <section id="testimonials" class="testimonials">
+                <div class="testimonial-card">
+                    <div class="customer-image"><img
+                            src="https://i0.wp.com/informthestudents.files.wordpress.com/2023/12/picture2.jpg?ssl=1"
+                            alt="Customer 1">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Polywell's waste management products have
+                            transformed our
+                            operations. Their durable Pedal/Wheeled dustbins withstand
+                            heavy usage and harsh weather, ensuring efficient waste collection. The garbage
+                            rickshaws are a boon for our workers, enabling swift
+                            and organized garbage pickup. With Polywell's wheelbarrows and garbage bags, our waste
+                            management process has never been more effective."</p>
+                        <div class="customer-details">
+                            <p>-SACHIN GUPTA</p>
+                            <p>PSV Biotech Pvt Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="customer-image"><img
+                            src="https://i0.wp.com/informthestudents.files.wordpress.com/2023/12/picture1.png?ssl=1"
+                            alt="Customer 1">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"We are incredibly impressed with
+                            Polywell's range of waste
+                            management solutions. The dustbins are robust and versatile,
+                            accommodating various types of waste with ease. Our municipality has benefited greatly
+                            from the efficient garbage rickshaws, which streamline waste
+                            collection in our urban areas. Polywell's wheelbarrows and garbage bags are essential
+                            tools in our daily operations."
+                        </p>
+                        <div class="customer-details">
+                            <p>-GURDIP SINGH</p>
+                            <p>A.G International</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="customer-image"><img
+                            src="https://i0.wp.com/informthestudents.files.wordpress.com/2023/12/picture3.jpg?ssl=1"
+                            alt="Customer 1">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Polywell's commitment to excellence
+                            shines through in their
+                            waste management products. The dustbins are not only sturdy but
+                            also aesthetically pleasing, enhancing the cleanliness of our public spaces. Our waste
+                            collection teams rely on the reliable garbage rickshaws, which
+                            navigate narrow streets effortlessly. With Polywell's wheelbarrows and garbage bags,
+                            waste disposal has become a breeze."</p>
+                        <div class="customer-details">
+                            <p>-MEHUL VOHRA</p>
+                            <p>Medikit Products</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for other testimonials -->
+            </section>
+        </div>
+
+
+        <div class="container">
+            <h1 style="text-align: center; font-size: 40px; color:black;"> Enquiry Form</h1>
+            <form id="contact-form" style="margin-top: -20px;">
+
+                <input type="text" name="your-name" placeholder="Name">
+                <input type="text" name="your-number" placeholder="Number">
+                <input type="email" name="your-email" placeholder="Email">
+                <textarea name="message" rows="7" placeholder="Your Message"></textarea>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+            <div id="message" style="display: none;"></div>
+        </div>
+
+        </div>
+
+
+        <div>
+            <h1 style="text-align: center; font-size: 40px;padding-top: 20px; color:black;"> Certifications</h1>
+
+            <div class="certificate-section">
+                <!-- Certificate Card 1 -->
+                <div class="certificate-card">
+                    <img src="https://i0.wp.com/informthestudents.files.wordpress.com/2024/02/certificate-3.jpg?ssl=1"
+                        alt="Certificate 1">
+
+                </div>
+
+                <div class="certificate-card">
+                    <img src="https://i0.wp.com/informthestudents.files.wordpress.com/2024/02/certificate-4.jpg?ssl=1"
+                        alt="Certificate 1">
+
+                </div>
+
+                <div class="certificate-card">
+                    <img src="https://i0.wp.com/informthestudents.files.wordpress.com/2024/02/certificate-4.jpg?ssl=1"
+                        alt="Certificate 1">
+
+                </div>
+
+                <div class="certificate-card">
+                    <img src="https://i0.wp.com/informthestudents.files.wordpress.com/2024/02/certificate-5.jpg?ssl=1"
+                        alt="Certificate 1">
+
+                </div>
+
+                <div class="certificate-card">
+                    <img src="https://i0.wp.com/informthestudents.files.wordpress.com/2024/02/cirtificate2.jpg?ssl=1"
+                        alt="Certificate 1">
+
+                </div>
+                <!-- Repeat for other certificate cards -->
+            </div>
+        </div>
+
+
+
+        <footer class="footer">
+            <div class="footer-container" style="color: white; text-align: justify;">
+                <!-- Column 1: Logo and Description -->
+                <div class="footer-column footer-logo">
+                    <img src="https://polywell.co.in/wp-content/uploads/2021/05/Polywell-Logo-291-x77-1-2.png"
+                        alt="Company Logo">
+                    <p>Your company description here.</p>
+                    <p> <a href="tel:+91 9310001907" class="cta-button" id="call-btn"><b>Call </b></a>
+
+                    </p>
+                </div>
+                <!-- Column 2: Featured Products -->
+                <!-- Column 3: Navigation Links -->
+
+                <!-- Column 4: Social Media Links -->
+                <div class="footer-column" style=" text-align: justify;">
+
+                    <ul class="footer-social">
+                        <li><a href="https://www.facebook.com/polywel/" target="_blank"><img
+                                    src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.linkedin.com/in/polywell/" target="_blank"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png"
+                                    alt="Twitter"></a></li>
+                        <li><a href="https://www.instagram.com/polywell_dustbins_biohazardbag/" target="_blank"><img
+                                    src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-three-dimensional-instagram-icon-png-image_9015419.png"
+                                    alt="Twitter"></a></li>
+
+                        <!-- Add more social media icons as needed -->
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+    </body>
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
+        document.getElementById('call-btn').addEventListener('click', function () {
+            alert('Calling +91 9310001907...');
+            // The browser will handle the actual call log opening
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', handleSubmit);
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form element
+            var form = event.target;
+
+            // Create a new FormData object
+            var formData = new FormData(form);
+
+            // Your Google Apps Script web URL
+            var scriptURL = 'https://script.google.com/macros/s/AKfycbwgJLm8eiKu16nmMzoFnc1NmDF57m4oQezDBy4ZFT3qZOoFamHuLczDu82UAImmh7Oe/exec';
+
+            // Send form data to the Google Apps Script URL using AJAX
+            fetch(scriptURL, {
+                method: 'POST', // Specify POST method
+                body: formData
+            })
+                .then(() => {
+                    window.alert("Form Submitted");
+                })
+                .catch(error => {
+                    window.alert("Form Submitted");
+                });
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('popup').style.display = 'flex';
+            }, 5000); // 5 seconds delay
+        };
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        function callUs() {
+            window.location.href = 'tel:+919310001907';
+        }
+
+
+        document.getElementById("closeForm").addEventListener("click", function () {
+            document.getElementById("enquiryForm").style.display = "none";
+        });
+    </script>
+
+</body>
+
+</html>

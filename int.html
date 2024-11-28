@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Company - Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .main-content h2 {
+            color: #333;
+        }
+        .cta-button {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .cta-button:hover {
+            background: #218838;
+        }
+        .trust-elements, .testimonial {
+            margin: 20px 0;
+        }
+        .testimonial blockquote {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #ccc;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Company Name</h1>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2>Discover Our Amazing Product</h2>
+            <p>Experience the best features and benefits that our product has to offer. Join thousands of satisfied customers and see the difference for yourself!</p>
+            <a href="#form" class="cta-button">Get Started Now</a>
+        </div>
+        <div class="trust-elements">
+            <h3>Trusted by Industry Leaders</h3>
+            <img src="logo1.png" alt="Logo 1" width="100">
+            <img src="logo2.png" alt="Logo 2" width="100">
+            <img src="logo3.png" alt="Logo 3" width="100">
+        </div>
+        <div class="testimonial">
+            <h3>What Our Customers Say</h3>
+            <blockquote>
+                <p>"This product has changed the way we do business. Highly recommended!" - John Doe, CEO of ExampleCorp</p>
+            </blockquote>
+        </div>
+        <div id="form">
+            <h3>Sign Up for More Information</h3>
+            <form action="/submit-form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <button type="submit" class="cta-button">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
